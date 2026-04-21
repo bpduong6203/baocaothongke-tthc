@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { useClerk } from "@clerk/nextjs";
 import { BadgeCheck, Bell, CreditCard, LogOut } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -27,6 +28,7 @@ export function AccountSwitcher({
   }>;
 }) {
   const [activeUser, setActiveUser] = useState(users[0]);
+  const { signOut } = useClerk();
 
   return (
     <DropdownMenu>
@@ -71,7 +73,7 @@ export function AccountSwitcher({
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => signOut({ redirectUrl: "/sign-in" })}>
           <LogOut />
           Log out
         </DropdownMenuItem>
