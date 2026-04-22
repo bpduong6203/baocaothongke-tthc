@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { MetricCards } from "./_components/metric-cards";
 import { PerformanceOverview } from "./_components/performance-overview";
 import { SubscriberOverview } from "./_components/subscriber-overview";
