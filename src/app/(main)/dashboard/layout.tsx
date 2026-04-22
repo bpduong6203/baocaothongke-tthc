@@ -4,7 +4,6 @@ import { cookies } from "next/headers";
 import Link from "next/link";
 
 import { currentUser } from "@clerk/nextjs/server";
-import { siGithub } from "simple-icons";
 
 import { AppSidebar } from "@/app/(main)/dashboard/_components/sidebar/app-sidebar";
 import { Button } from "@/components/ui/button";
